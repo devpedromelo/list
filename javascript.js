@@ -1,5 +1,5 @@
 const btn = document.querySelector("#push");
-const input = document.querySelector(" input");
+const input = document.querySelector("input");
 const tasks = document.querySelector("#tasks");
 
 
@@ -18,5 +18,21 @@ btn.addEventListener('click', () => {
                 </span>
             </button>
         </div>`;
+
+        const currentTask = document.querySelectorAll(".delete");
+        for(var i=0; i<currentTask.length; i++){
+            currentTask[i].onclick = function(){
+                this.parentNode.remove();
+            }
+        };
+
+        var task = document.querySelectorAll(".task")
+        for(var i=0; i<task.length; i++){
+            task[i].onclick = function(){
+                this.classList.toggle("completed");
+            }
+        };
     }
-})
+
+    input.value = ''
+});
